@@ -13,7 +13,7 @@ Screens: login, workspace list, workspace detail (projects + credit balance), me
 ## Run locally
 ```bash
 npm ci
-cp .env.example .env.local      # point NEXT_PUBLIC_API_URL at the API
+cp .env.example .env.local      # set NEXT_PUBLIC_API_URL to http://localhost:8000 for local development
 npm run dev                     # http://localhost:3000
 ```
 
@@ -26,9 +26,10 @@ npm ci && npm run typecheck && npm run build && npm start
 ## Deploy to Vercel
 1. Import this repository in Vercel (framework preset: **Next.js**).
 2. Project -> Settings -> Environment Variables:
-   * `NEXT_PUBLIC_API_URL` - the backend URL, e.g. `https://phoenix-backend.vercel.app`
-     (it is baked into the bundle at build time, so redeploy after changing it)
-3. Add the frontend URL to the backend's `CORS_ORIGINS` and redeploy the backend.
+   * `NEXT_PUBLIC_API_URL` - `https://mini-hack.onrender.com` (the Render backend base URL;
+     do not append `/api`). This is baked into the bundle at build time, so redeploy after changing it.
+3. Add your Vercel frontend URL to the Render backend's `CORS_ORIGINS` environment variable
+   and redeploy the backend.
 
 ## Expected behaviour
 * Login with `alice@phoenix.dev` / `phoenix123`; the session survives a page refresh.

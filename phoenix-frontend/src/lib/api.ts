@@ -1,6 +1,6 @@
 import { clearCache, getCached, setCached } from "./cache";
 
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000").replace(/\/+$/, "");
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "https://mini-hack.onrender.com").replace(/\/+$/, "");
 
 export const TOKEN_KEY = "phoenix_token";
 
